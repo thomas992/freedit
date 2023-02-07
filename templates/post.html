@@ -54,23 +54,25 @@
 
 <div class="level is-mobile">
     <div class="level-item" id="upvote">
-        {% if page_data.claim.is_some() %}
-            {% if post.is_upvoted %}
-            <a href="/post/{{post.iid}}/{{post.pid}}/upvote#upvote"><span class="tag is-success is-rounded">👍 󠁮󠁮󠁮󠁮{% if post.upvotes >0 %} {{post.upvotes}} {% endif %}</span></a>
-            {% else %}
-            <a href="/post/{{post.iid}}/{{post.pid}}/upvote#upvote"><span class="tag is-info is-light is-rounded">👍 󠁮󠁮󠁮󠁮{% if post.upvotes >0 %} {{post.upvotes}} {% endif %}</span></a>
-            {% endif %}
+        <p>
+            {% if page_data.claim.is_some() %}
+                {% if post.is_upvoted %}
+                <a href="/post/{{post.iid}}/{{post.pid}}/upvote#upvote"><span class="tag is-success is-rounded">👍 󠁮󠁮󠁮󠁮{% if post.upvotes >0 %} {{post.upvotes}} {% endif %}</span></a>
+                {% else %}
+                <a href="/post/{{post.iid}}/{{post.pid}}/upvote#upvote"><span class="tag is-info is-light is-rounded">👍 󠁮󠁮󠁮󠁮{% if post.upvotes >0 %} {{post.upvotes}} {% endif %}</span></a>
+                {% endif %}
 
-            {% if post.is_downvoted %}
-            <a href="/post/{{post.iid}}/{{post.pid}}/downvote#downvote"><span class="tag is-success is-rounded">👎 󠁮󠁮󠁮󠁮{% if post.downvotes >0 %} {{post.downvotes}} {% endif %}</span></a>
-            {% else %}
-            <a href="/post/{{post.iid}}/{{post.pid}}/downvote#downvote"><span class="tag is-info is-light is-rounded">👎 󠁮󠁮󠁮󠁮{% if post.downvotes >0 %} {{post.downvotes}} {% endif %}</span></a>
-            {% endif %}
+                {% if post.is_downvoted %}
+                <a href="/post/{{post.iid}}/{{post.pid}}/downvote#downvote"><span class="tag is-success is-rounded">👎 󠁮󠁮󠁮󠁮{% if post.downvotes >0 %} {{post.downvotes}} {% endif %}</span></a>
+                {% else %}
+                <a href="/post/{{post.iid}}/{{post.pid}}/downvote#downvote"><span class="tag is-info is-light is-rounded">👎 󠁮󠁮󠁮󠁮{% if post.downvotes >0 %} {{post.downvotes}} {% endif %}</span></a>
+                {% endif %}
 
-        {% else %}
-            <span class="tag is-info is-light is-rounded">👍 󠁮󠁮󠁮󠁮{% if post.upvotes >0 %} {{post.upvotes}} {% endif %}</span>
-            <span class="tag is-info is-light is-rounded">👎 󠁮󠁮󠁮󠁮{% if post.downvotes >0 %} {{post.downvotes}} {% endif %}</span>
-        {% endif %}
+            {% else %}
+                <span class="tag is-info is-light is-rounded">👍 󠁮󠁮󠁮󠁮{% if post.upvotes >0 %} {{post.upvotes}} {% endif %}</span>
+                <span class="tag is-info is-light is-rounded">👎 󠁮󠁮󠁮󠁮{% if post.downvotes >0 %} {{post.downvotes}} {% endif %}</span>
+            {% endif %}
+        </p>
     </div>
 </div>
 
